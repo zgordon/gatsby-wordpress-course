@@ -24,6 +24,8 @@ module.exports = async ({ actions, graphql }) => {
   `
   const { createPage } = actions
   const allPosts = []
+  const blogPages = []
+  let pageNumber = 0
   // Create a function for getting pages
   const fetchPosts = async variables =>
     await graphql(GET_POSTS, variables).then(({ data }) => {
@@ -35,18 +37,46 @@ module.exports = async ({ actions, graphql }) => {
           },
         },
       } = data
+
+      const nodeIds = nodes.map(node => node.postId)
+      const blogTemplate = path.resolve(`./src/templates/posts.js`)
+      const blogPagePath = !variables.after
+        ? `/blog/`
+        : `/blog/page/${pageNumber}`
+
+      console.log(`blog path: ${blogPagePath}`)
+      console.log(`blog path: ${blogPagePath}`)
+
+      blogPages[pageNumber] = {
+        path: blogPagePath,
+        component: blogTemplate,
+        context: {
+          ids: nodeIds,
+          pageNumber: pageNumber,
+          hasNextPage: hasNextPage,
+        },
+        ids: nodeIds,
+      }
+
       nodes.map(post => {
         allPosts.push(post)
       })
       if (hasNextPage) {
-        return fetchPosts({ first: variables.first, after: endCursor })
+        pageNumber++
+        return fetchPosts({ first: 12, after: endCursor })
       }
       return allPosts
     })
 
   // Map over all the pages and call createPage
-  await fetchPosts({ first: 100, after: null }).then(allPosts => {
+  await fetchPosts({ first: 12, after: null }).then(allPosts => {
     const postTemplate = path.resolve(`./src/templates/post.js`)
+
+    console.table(blogPages)
+    blogPages.map(page => {
+      console.log(`create archive: ${page.path}`)
+      createPage(page)
+    })
 
     allPosts.map(post => {
       console.log(`create post: ${post.uri}`)
