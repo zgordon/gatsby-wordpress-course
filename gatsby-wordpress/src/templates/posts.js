@@ -1,32 +1,23 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import ArchivePosts from "../components/archivePosts"
+
 import Pagination from "../components/pagination"
 const Posts = props => {
   const {
-    data,
     data: {
       wpgraphql: { posts },
     },
     pageContext: { pageNumber, hasNextPage },
   } = props
-
-  console.log(props)
   const currentPage = pageNumber ? `- Page ${pageNumber}` : ``
-  console.log(data)
-  console.log(posts.nodes)
   return (
-    <div>
+    <Layout>
       <h1>Blog Archive {currentPage}</h1>
-      {posts.nodes.map(post => (
-        <h2
-          key={post.id}
-          // dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        >
-          {post.title}
-        </h2>
-      ))}
+      <ArchivePosts posts={posts} title={false} />
       <Pagination pageNumber={pageNumber} hasNextPage={hasNextPage} />
-    </div>
+    </Layout>
   )
 }
 

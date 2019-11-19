@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
+import MainMenu from "./mainMenu"
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -27,6 +27,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <MainMenu />
     </div>
   </header>
 )
