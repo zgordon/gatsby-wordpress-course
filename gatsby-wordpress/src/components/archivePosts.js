@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const ArchivePosts = ({ posts, title = true }) => (
   <>
