@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const TagTemplate = props => {
   const {
@@ -9,9 +10,9 @@ const TagTemplate = props => {
   } = props
   const { name } = tag
   return (
-    <div>
+    <Layout>
       <h1>Tag: {name}</h1>
-    </div>
+    </Layout>
   )
 }
 

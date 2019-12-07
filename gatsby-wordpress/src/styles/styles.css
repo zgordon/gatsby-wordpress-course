@@ -1,0 +1,36 @@
+.main-menu > ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu a {
+  display: block;
+  padding: .5rem;
+  color: white;
+}
+
+.main-menu a:hover,
+.main-menu a[aria-current="page"] {
+  background: white;
+  color: rebeccapurple;
+}
+
+.main-menu li ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.main-menu li:hover ul {
+  display: block;
+  position: absolute;
+  background: rebeccapurple;
+  border: 1px rebeccapurple solid;
+}

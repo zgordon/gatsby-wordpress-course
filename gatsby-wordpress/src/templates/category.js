@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const CategoryTemplate = props => {
   const {
@@ -9,9 +10,9 @@ const CategoryTemplate = props => {
   } = props
   const { name } = category
   return (
-    <div>
+    <Layout>
       <h1>Category: {name}</h1>
-    </div>
+    </Layout>
   )
 }
 

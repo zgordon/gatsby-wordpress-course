@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const UserTemplate = props => {
   const {
@@ -9,9 +10,9 @@ const UserTemplate = props => {
   } = props
   const { name } = user
   return (
-    <div>
+    <Layout>
       <h1>User: {name}</h1>
-    </div>
+    </Layout>
   )
 }
 

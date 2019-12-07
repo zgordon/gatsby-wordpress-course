@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const Post = props => {
   const {
@@ -9,10 +10,10 @@ const Post = props => {
   } = props
   const { title, content } = post
   return (
-    <div>
+    <Layout>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content }}></div>
-    </div>
+    </Layout>
   )
 }
 
