@@ -12,7 +12,7 @@
 
 .main-menu a {
   display: block;
-  padding: .5rem;
+  padding: 0.5rem;
   color: white;
 }
 
@@ -33,4 +33,63 @@
   position: absolute;
   background: rebeccapurple;
   border: 1px rebeccapurple solid;
+}
+
+.comment {
+  margin: 2rem 0;
+  border: 1px #ededed solid;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.comment .meta {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+#comment-form .feedback {
+  padding: 1rem;
+}
+
+#comment-form .success {
+  border: 1px green solid;
+  background: lightgreen;
+}
+#comment-form .info {
+  border: 1px orange solid;
+  background: lightyellow;
+}
+#comment-form .error {
+  border: 1px red solid;
+  background: lightpink;
+}
+
+#comment-form label {
+  display: block;
+}
+
+#comment-form #comment-field {
+  width: 100%;
+  min-height: 5rem;
+}
+
+#comment-form .meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#comment-form .meta p {
+  width: 48%;
+}
+
+#comment-form .meta input {
+  width: 100%;
+}
+
+button#cancel-reply {
+  border: none;
+  background: none;
+  font-weight: normal;
+  text-decoration: underline;
+  padding-left: 1rem;
 }

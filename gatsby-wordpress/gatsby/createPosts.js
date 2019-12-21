@@ -76,7 +76,7 @@ module.exports = async ({ actions, graphql }) => {
     allPosts.map(post => {
       console.log(`create post: ${post.uri}`)
       createPage({
-        path: `/${post.uri}`,
+        path: `/blog/${post.uri}`,
         component: postTemplate,
         context: post,
       })

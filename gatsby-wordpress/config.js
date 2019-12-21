@@ -1,5 +1,5 @@
 const config = {
-  wordPressURL: `http://gatsby-wordpress.local/`,
+  wordPressURL: `http://gatsby-3.local/`,
 }
 
 export default config

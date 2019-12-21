@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const UserTemplate = props => {
   const {
@@ -11,6 +12,7 @@ const UserTemplate = props => {
   const { name } = user
   return (
     <Layout>
+      <SEO title={`User ${name}`} />
       <h1>User: {name}</h1>
     </Layout>
   )

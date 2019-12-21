@@ -40,7 +40,7 @@ module.exports = async ({ actions, graphql }) => {
         },
       } = data
       nodes.map(page => {
-        allPages.push(page)
+        if (page.uri !== `blog`) allPages.push(page)
       })
       if (hasNextPage) {
         return fetchPages({ first: variables.first, after: endCursor })
