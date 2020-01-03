@@ -35,7 +35,7 @@ module.exports = async ({ actions, graphql }) => {
         allusers.push(user)
       })
       if (hasNextPage) {
-        return fetchCategories({ first: variables.first, after: endCursor })
+        return fetchUsers({ first: variables.first, after: endCursor })
       }
       return allusers
     })

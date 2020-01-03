@@ -35,7 +35,7 @@ module.exports = async ({ actions, graphql }) => {
         allTags.push(tag)
       })
       if (hasNextPage) {
-        return fetchCategories({ first: variables.first, after: endCursor })
+        return fetchTags({ first: variables.first, after: endCursor })
       }
       return allTags
     })
