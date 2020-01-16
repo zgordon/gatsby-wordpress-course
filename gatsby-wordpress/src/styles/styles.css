@@ -34,3 +34,90 @@
   background: rebeccapurple;
   border: 1px rebeccapurple solid;
 }
+
+.post.meta {
+  border-bottom: 1px #ccc solid;
+  padding: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
+  font-size: .8rem;
+}
+
+.meta ul,
+.meta li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+
+.meta ul {
+  padding-left: 5px;
+}
+
+.meta ul li + li:before {
+  content: ", "
+}
+
+.metas ul li:first-of-type:before {
+  content: "" !important;
+}
+
+.comment {
+  margin: 2rem 0;
+  padding: 1rem 2rem 0 2rem;
+  border: 1px #ccc solid;
+}
+
+.comment .meta {
+  font-size: .6rem;
+}
+
+#comment-form label {
+  display: block
+}
+
+#comment-form #comment-field {
+  width: 100%;
+  min-height: 5rem;
+}
+
+#comment-form .meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#comment-form .meta p {
+  width: 48%;
+}
+
+#comment-form .meta input {
+  width: 100%;
+}
+
+#comment-form .feedback {
+  padding: 1rem;
+}
+
+#comment-form .success {
+  border: 1px green solid;
+  background: lightgreen;
+}
+
+#comment-form .info {
+  border: 1px orange solid;
+  background: lightyellow;
+}
+
+#comment-form .error {
+  border: 1px red solid;
+  background: lightpink;
+}
+
+button#cancel-reply {
+  border: none;
+  background: none;
+  font-weight: normal;
+  text-decoration: underline;
+  padding-left: 1rem;
+}

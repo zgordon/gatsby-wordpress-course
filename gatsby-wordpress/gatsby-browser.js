@@ -4,4 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import React from "react"
+import { ApollloProvider, ApolloProvider } from "@apollo/react-hooks"
+import ApolloClient from "apollo-boost"
+
+export const wrapRootElement = ({ element }) => {
+  const client = new ApolloClient({
+    uri: `http://gatsby-wordpress.local/graphql`,
+  })
+
+  return <ApolloProvider client={client}>{element}</ApolloProvider>
+}
