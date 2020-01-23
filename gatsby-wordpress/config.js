@@ -1,5 +1,5 @@
 const config = {
-  wordPressURL: `http://gatsby-wordpress.local/`,
+  wordPressURL: `https://dev-gatsby-and-wordpress.pantheonsite.io`,
 }
 
 export default config
